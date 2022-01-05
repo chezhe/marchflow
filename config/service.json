@@ -1,3 +1,60 @@
 {
-  "title": "服务"
+  "title": "服务",
+  "subtitle": "服务范围",
+  "items": [
+    {
+      "title": "品牌官网设计",
+      "title_en": "Brand official website design",
+      "desc": "分析策划 / 视觉表现 / 架构优化 / 用户体验设计 / 响应式 / 一站式后台管理 / 顶级域名 / 售后运维",
+      "image": "/service/website.jpg"
+    },
+    {
+      "title": "短视频运营",
+      "title_en": "Brand official website website construction",
+      "desc": "抖音等短视频平台代运营 / 创意方案脚本 / 三维动态设计（30秒起做） / 后期剪辑包装设计 ",
+      "image": "/service/video.jpg"
+    },
+    {
+      "title": "电商运营",
+      "title_en": "Brand official website website promotion",
+      "desc": "战略差异化视觉方案 / 创意主视觉KV执行设计 / 店招创意设计 / 品牌标题、产品展示模块规范塑造 / 无线端设计适配 / 全案定制版产品详情页 / 风格定位方案 / 文案策划 / 人群定位、竞品分析、方案线稿 / 三维场景建模渲染 / 标准主图 / 详情页全案",
+      "image": "/service/e-commerce.jpg"
+    },
+    {
+      "title": "外贸快车",
+      "title_en": "Brand official website website optimization",
+      "desc": "外贸快车是基于大数据和云计算的智能网络营销系统平台。依托五大功能系统，帮助外贸企业智能创建多语种营销型网站和先进的VR展示网站，通过采购商数据挖掘，以及SEO、SNS等多渠道网络营销，实现全球推广和新兴市场开发。",
+      "image": "/service/foreign-trade.jpg"
+    },
+    {
+      "title": "SEO搜索引擎优化",
+      "title_en": "Brand official website website maintenance",
+      "desc": "综合优化搜索引擎认可 / 引导企业如何规划出同时满足用户与搜索引擎两者的网站运营体系 / 提升网站设计整体解决方案 / 搜索引擎营销 / 网络营销",
+      "image": "/service/SEO.jpg"
+    },
+    {
+      "title": "品牌建设",
+      "title_en": "Brand official website mobile development",
+      "desc": "VI识别系统 / 品牌视觉元素总汇 / 品牌LOGO应用标准 / 色彩应用规范 / 品牌字体规范 / 日常运营页面规范 / 摄影应用规范/ 辅助图形及icon应用规范 细化品牌调性 / 包装同系列延展 / IP形象设计 / 形象设计、场景化塑造 / IP形象设计基础规范",
+      "image": "/service/brand.jpg"
+    },
+    {
+      "title": "移动端开发",
+      "title_en": "Brand official website mobile development",
+      "desc": "小程序 / IOS、Android客户端开发 / 原型设计 / 用户体验设计 / 差异化调性塑造 / UI设计 / 运营页面设计 / 运营页面设计规范方案 / 程序开发 / 售后运维",
+      "image": "/service/mobile.jpg"
+    },
+    {
+      "title": "数据大屏",
+      "title_en": "Brand official website mobile development",
+      "desc": "数据可视化设计 / WEB端程序开发 / unity3D 程序开发 / 程序化平台开发 / 数字孪生设计开发 / 动态设计 / 三维场景建模渲染",
+      "image": "/service/data-screen.jpg"
+    },
+    {
+      "title": "数字运营",
+      "title_en": "Brand official website mobile development",
+      "desc": "PC端、移动端代运营 / 创意文案策划 / 活动策划 / 运营页面设计 / 运营设计规范方案 / 运营账号代管理 / 用户数据调研分析报告 ",
+      "image": "/service/digital-operations.jpg"
+    }
+  ]
 }

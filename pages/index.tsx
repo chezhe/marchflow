@@ -112,6 +112,44 @@ export default function Home() {
           })}
         </Box>
       </Box>
+
+      <Box
+        background="#17181A"
+        pad={{ top: '120px', bottom: '70px' }}
+        gap="large"
+        align="center"
+      >
+        <Box align="center">
+          <Heading level={3} margin="none">
+            {HOME.case.title}
+          </Heading>
+          <Text color="#999">{HOME.case.title_en}</Text>
+        </Box>
+
+        <Button primary color="white" label="探索更多" href="/case" />
+      </Box>
+
+      <Box pad={{ top: '120px', bottom: '70px' }} gap="large" align="center">
+        <Box align="center">
+          <Heading level={3} margin="none">
+            {HOME.partner.title}
+          </Heading>
+          <Text color="#999">{HOME.partner.title_en}</Text>
+          <Text size="small">{HOME.partner.subtitle}</Text>
+        </Box>
+        <Box direction="row" align="center" justify="center" gap="small" wrap>
+          {HOME.partner.items.map((item) => {
+            return (
+              <Image
+                key={item.title}
+                src={item.image}
+                alt={item.title}
+                width="392px"
+              />
+            )
+          })}
+        </Box>
+      </Box>
     </Layout>
   )
 }
