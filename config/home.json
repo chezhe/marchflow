@@ -1,0 +1,101 @@
+{
+  "title": "首页",
+  "banner": {
+    "title": "全栈式数字营销机构",
+    "keywords": [
+      "网站建设",
+      "外贸快车",
+      "SEO",
+      "品牌建设",
+      "视频营销",
+      "数字运营",
+      "数字运营",
+      "数据大屏",
+      "移动端开发"
+    ],
+    "backgroundImage": "/home/banner.jpg",
+    "companyImage": "/home/company.svg",
+    "fontColor": "",
+    "button": {
+      "text": "",
+      "link": ""
+    }
+  },
+  "service": {
+    "title": "服务范围",
+    "title_en": "SERVICE",
+    "subtitle": "数字化综合服务，一站式满足您互联网数字营销需求",
+    "items": [
+      {
+        "title": "网站建设",
+        "image": "/home/service/website.jpg"
+      },
+      {
+        "title": "短视频运营",
+        "image": "/home/service/video.jpg"
+      },
+      {
+        "title": "电商运营",
+        "image": "/home/service/e-commerce.jpg"
+      },
+      {
+        "title": "SEO",
+        "image": "/home/service/SEO.jpg"
+      },
+      {
+        "title": "品牌建设",
+        "image": "/home/service/brand.jpg"
+      },
+      {
+        "title": "外贸快车",
+        "image": "/home/service/foreign-trade.jpg"
+      },
+      {
+        "title": "移动端开发",
+        "image": "/home/service/mobile.jpg"
+      },
+      {
+        "title": "数据大屏",
+        "image": "/home/service/data-screen.jpg"
+      },
+      {
+        "title": "数字运营",
+        "image": "/home/service/digital-operations.jpg"
+      }
+    ]
+  },
+  "core": {
+    "title": "远川核心",
+    "title_en": "CORE",
+    "subtitle1": "创意设计",
+    "x": "/home/x.svg",
+    "subtitle2": "商业价值",
+    "items": [
+      {
+        "number": 2,
+        "quantifier": "地",
+        "desc": "江浙两地互相助力"
+      },
+      {
+        "number": 9,
+        "quantifier": "大",
+        "desc": "服务模块"
+      },
+      {
+        "number": 1600,
+        "quantifier": "+",
+        "desc": "客户案例"
+      },
+      {
+        "number": 7,
+        "quantifier": "年",
+        "desc": "服务互联网营销经验"
+      },
+      {
+        "number": 500,
+        "quantifier": "+",
+        "desc": "客户坚定选择"
+      }
+    ]
+  }
+}

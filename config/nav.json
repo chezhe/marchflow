@@ -1,0 +1,24 @@
+{
+  "menu": [
+    {
+      "title": "首页",
+      "link": "/"
+    },
+    {
+      "title": "服务",
+      "link": "/service"
+    },
+    {
+      "title": "案例",
+      "link": "/case"
+    },
+    {
+      "title": "关于",
+      "link": "/about"
+    },
+    {
+      "title": "联系",
+      "link": "/contact"
+    }
+  ]
+}
