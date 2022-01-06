@@ -48,6 +48,16 @@ export default function About() {
           <Text color="white">{ABOUT.value.subtitle1}</Text>
           <Text color="white">{ABOUT.value.subtitle2}</Text>
         </Box>
+
+        <Box align="center" gap="large" pad={{ bottom: '70px' }}>
+          <Box>
+            <Heading level={3} margin="none">
+              {ABOUT.customers.title}
+            </Heading>
+            <Text color="#999">{ABOUT.customers.title_en}</Text>
+          </Box>
+          <Image width="1000px" src={ABOUT.customers.image} alt="" />
+        </Box>
       </Box>
     </Layout>
   )

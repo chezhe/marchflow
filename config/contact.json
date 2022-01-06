@@ -1,3 +1,25 @@
 {
-  "title": "联系"
+  "title": "联系",
+  "subtitle": "联系我们",
+  "jiangsu": {
+    "address": "地址：江苏省无锡市新吴区旺庄街道长江一号6号楼5楼",
+    "tel": "电话：18768199698",
+    "weixin": "微信：marchflow01",
+    "province": "联系-江苏",
+    "company": "远川信息江苏总部",
+    "image": "/contact/jiangsu.jpg"
+  },
+  "zhejiang": {
+    "address": "地址：浙江省嘉兴市桐乡市发展大道708号绿地智慧城22幢1单元806",
+    "tel": "电话：187681997337",
+    "weixin": "微信：devilfly",
+    "province": "联系-浙江",
+    "company": "远川信息浙江分部",
+    "image": "/contact/zhejiang.jpg"
+  },
+  "apply": {
+    "mail": "565401796@qq.com",
+    "mail_title": "邮件主题请注明：姓名+应聘职位+获取途径",
+    "title": "简历投递"
+  }
 }

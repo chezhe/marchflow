@@ -99,7 +99,7 @@ export default function Home() {
             return (
               <Box key={idx} align="center" gap="small">
                 <Box direction="row" align="end" gap="small">
-                  <Text color="white" size="xxlarge">
+                  <Text color="white" size="xxlarge" weight={700}>
                     {item.number}
                   </Text>
                   <Text color="white" size="small">

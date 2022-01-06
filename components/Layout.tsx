@@ -1,4 +1,5 @@
 import {
+  Anchor,
   Box,
   Grommet,
   grommet,
@@ -12,6 +13,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import NAV from 'config/nav.json'
 import { useRouter } from 'next/router'
+import Footer from './Footer'
 
 export default function Layout({
   title,
@@ -41,7 +43,7 @@ export default function Layout({
               height="80px"
               pad={{ horizontal: 'large' }}
             >
-              <Image src="/logo.svg" alt="logo" />
+              <Anchor icon={<Image src="/logo.svg" alt="logo" />} href="/" />
 
               <Box direction="row" gap="large">
                 {NAV.menu.map((item) => {
@@ -85,6 +87,7 @@ export default function Layout({
           }}
         </ResponsiveContext.Consumer>
       </Main>
+      <Footer />
     </Grommet>
   )
 }

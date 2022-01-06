@@ -28,7 +28,11 @@ export default function Service() {
                   <Text size="small">{item.desc}</Text>
                 </Box>
 
-                <Button label="+MORE" />
+                <Button
+                  color="#999"
+                  label="+MORE"
+                  style={{ fontWeight: 500 }}
+                />
               </Box>
             )
           })}

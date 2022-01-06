@@ -1,0 +1,44 @@
+{
+  "social": [
+    {
+      "title": "Wechat",
+      "image": "/footer/wechat.svg",
+      "hover": "/footer/wechat-hover.svg",
+      "hover_text": "微信 18768199698"
+    },
+    {
+      "title": "Tiktok",
+      "image": "/footer/tiktok.svg",
+      "hover": "/footer/wechat-hover.svg",
+      "hover_text": "微信 18768199698"
+    },
+    {
+      "title": "QQ",
+      "image": "/footer/qq.svg",
+      "hover": "/footer/wechat-hover.svg",
+      "hover_text": "微信 18768199698"
+    }
+  ],
+  "consult": {
+    "wecht": "微信咨询",
+    "tel": "电话咨询"
+  },
+  "business": {
+    "title": "业务范围",
+    "items": [
+      "品牌官网定制、电商运营",
+      "短视频运营",
+      "SEO、外贸快车",
+      "品牌建设",
+      "移动端开发、数据大屏",
+      "数字运营"
+    ]
+  },
+  "contact": {
+    "title": "联系地址",
+    "compnay": "无锡远川信息技术有限公司",
+    "address": "江苏·无锡·新吴区旺庄长江一号5楼"
+  },
+  "copyright": "Copyright © 1999-2021 无锡远川信息技术有限公司（300.cn）版权所有",
+  "record": "苏ICP备 2002030号"
+}
