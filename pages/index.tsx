@@ -1,8 +1,12 @@
 import { Box, Button, Heading, Image, Text } from 'grommet'
 import Layout from 'components/Layout'
 import HOME from 'config/home.json'
+import CASE from 'config/case.json'
+import { useState } from 'react'
+import _ from 'lodash'
 
 export default function Home() {
+  const [active, setActive] = useState(1)
   return (
     <Layout title={HOME.title} activeNav={HOME.title}>
       <Box
@@ -12,14 +16,14 @@ export default function Home() {
         align="center"
         gap="xlarge"
       >
-        <Heading color="white" margin="none">
+        <Heading color="white" margin="none" size="72px">
           {HOME.banner.title}
         </Heading>
         <Image src={HOME.banner.companyImage} alt="company" />
         <Box direction="row" gap="medium" wrap>
           {HOME.banner.keywords.map((keyword) => {
             return (
-              <Text key={keyword} color="white">
+              <Text key={keyword} color="white" size="24px">
                 {keyword}
               </Text>
             )
@@ -35,7 +39,7 @@ export default function Home() {
             </Heading>
             <Text color="#999">{HOME.service.title_en}</Text>
           </Box>
-          <Text size="small">{HOME.service.subtitle}</Text>
+          <Text size="medium">{HOME.service.subtitle}</Text>
         </Box>
         <Box direction="row" gap="small">
           {HOME.service.items.slice(0, 3).map((item) => {
@@ -136,28 +140,51 @@ export default function Home() {
           <Text color="#999">{HOME.case.title_en}</Text>
         </Box>
 
+        <Box direction="row" wrap={false}>
+          <Image
+            src={`/case/${active}.jpg`}
+            width="50%"
+            style={{ objectFit: 'contain' }}
+            alt=""
+          />
+          <Box direction="row" wrap>
+            {_.chunk(CASE.items.slice(0, 9), 3).map((items, idx) => {
+              return (
+                <Box key={idx} direction="row" wrap={false}>
+                  {items.map((item, index) => {
+                    const _idx = idx * 3 + index + 1
+                    return (
+                      <Image
+                        key={item.title}
+                        width="33%"
+                        src={`/case/${_idx}.jpg`}
+                        alt=""
+                        className={_idx === active ? 'active-case' : ''}
+                        onMouseEnter={() => setActive(_idx)}
+                        onMouseLeave={() => setActive(1)}
+                      />
+                    )
+                  })}
+                </Box>
+              )
+            })}
+          </Box>
+        </Box>
         <Button primary color="white" label="探索更多" href="/case" />
       </Box>
 
       <Box pad={{ top: '120px', bottom: '70px' }} gap="large" align="center">
-        <Box align="center">
-          <Heading level={3} margin="none">
-            {HOME.partner.title}
-          </Heading>
-          <Text color="#999">{HOME.partner.title_en}</Text>
-          <Text size="small">{HOME.partner.subtitle}</Text>
+        <Box align="center" gap="medium">
+          <Box align="center">
+            <Heading level={3} margin="none">
+              {HOME.partner.title}
+            </Heading>
+            <Text color="#999">{HOME.partner.title_en}</Text>
+          </Box>
+          <Text size="medium">{HOME.partner.subtitle}</Text>
         </Box>
         <Box direction="row" align="center" justify="center" gap="small" wrap>
-          {HOME.partner.items.map((item) => {
-            return (
-              <Image
-                key={item.title}
-                src={item.image}
-                alt={item.title}
-                width="392px"
-              />
-            )
-          })}
+          <Image src="/home/partner/index.png" alt="" />
         </Box>
       </Box>
     </Layout>

@@ -31,6 +31,7 @@ export default function Footer() {
                     label={item.title}
                     href={item.link}
                     color="#999"
+                    size="small"
                   />
                 )
               })}
@@ -102,7 +103,12 @@ export default function Footer() {
 
           <Box direction="row" gap="small">
             <Box align="end" gap="xsmall" pad={{ vertical: 'xsmall' }}>
-              <Text color="white" weight={600} style={{ marginBottom: 0 }}>
+              <Text
+                color="white"
+                weight={600}
+                style={{ marginBottom: 0 }}
+                size="16px"
+              >
                 {FOOTER.business.title}
               </Text>
               {FOOTER.business.items.map((item) => {
@@ -112,7 +118,12 @@ export default function Footer() {
                   </Text>
                 )
               })}
-              <Text color="white" weight={600} style={{ marginTop: 20 }}>
+              <Text
+                color="white"
+                weight={600}
+                style={{ marginTop: 20 }}
+                size="16px"
+              >
                 {FOOTER.contact.title}
               </Text>
               <Text color="#999" size="small">
@@ -126,11 +137,11 @@ export default function Footer() {
           </Box>
         </Box>
 
-        <Box margin={{ top: '50px' }}>
-          <Text size="small" color="white">
+        <Box margin={{ top: '50px' }} gap="small">
+          <Text size="16px" color="white">
             {FOOTER.copyright}
           </Text>
-          <Text size="small" color="white">
+          <Text size="16px" color="white">
             {FOOTER.record}
           </Text>
         </Box>

@@ -68,6 +68,7 @@ export default function Layout({
                             fontFamily: 'Microsoft YaHei',
                           }}
                           weight={700}
+                          size="small"
                           color={isActive ? '#F0183F' : 'white'}
                         >
                           {item.title}

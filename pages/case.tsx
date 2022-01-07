@@ -1,7 +1,8 @@
 import Layout from 'components/Layout'
 import CASE from 'config/case.json'
-import { Box, Heading, Text } from 'grommet'
+import { Box, Heading, Text, Image } from 'grommet'
 import { useState } from 'react'
+import _ from 'lodash'
 
 export default function Case() {
   const [active, setActive] = useState('ALL')
@@ -9,12 +10,18 @@ export default function Case() {
     <Layout title={CASE.title} activeNav={CASE.title}>
       <Box align="center">
         <Heading level={3}>{CASE.subtitle}</Heading>
-        <Box direction="row" width="1000px" align="center" justify="between">
+        <Box
+          direction="row"
+          width="91%"
+          align="center"
+          justify="between"
+          pad={{ vertical: 'medium' }}
+        >
           <Text weight={600} size="large">
             CASES
           </Text>
 
-          <Box direction="row" align="center" gap="small">
+          <Box direction="row" align="center" gap="medium">
             {CASE.categories.map((item, idx) => {
               const isActive = active === item
               return (
@@ -26,13 +33,46 @@ export default function Case() {
                   style={{
                     borderBottom: isActive ? '2px solid #000' : 'none',
                     lineHeight: 2,
+                    cursor: 'pointer',
                   }}
+                  onClick={() => setActive(item)}
                 >
                   {item}
                 </Text>
               )
             })}
           </Box>
+        </Box>
+
+        <Box
+          align="center"
+          justify="center"
+          gap="medium"
+          pad={{ bottom: 'large' }}
+        >
+          {_.chunk(CASE.items, 2).map((items, idx) => {
+            return (
+              <Box
+                key={idx}
+                align="center"
+                justify="center"
+                direction="row"
+                gap="medium"
+              >
+                {items.map((item, index) => {
+                  const key = idx * 2 + index + 1
+                  return (
+                    <Image
+                      width="45%"
+                      key={key}
+                      src={`/case/${key}.jpg`}
+                      alt=""
+                    />
+                  )
+                })}
+              </Box>
+            )
+          })}
         </Box>
       </Box>
     </Layout>
