@@ -15,3 +15,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.hover-zoom:hover {
+  background-size: cover;
+}

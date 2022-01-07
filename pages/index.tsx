@@ -40,29 +40,39 @@ export default function Home() {
         <Box direction="row" gap="small">
           {HOME.service.items.slice(0, 3).map((item) => {
             return (
-              <Image
+              <Box
                 key={item.title}
-                src={item.image}
-                alt={item.title}
                 width="244px"
                 height="524px"
-              />
+                background={`url(${item.image})`}
+                align="center"
+                className="hover-zoom"
+                justify="end"
+                pad={{ bottom: 'small' }}
+              >
+                <Text color="white" size="large" weight={700}>
+                  {item.title}
+                </Text>
+              </Box>
             )
           })}
           <Box direction="row" width="448px" align="center" wrap>
             {HOME.service.items.slice(3).map((item, idx) => {
               return (
-                <Image
+                <Box
                   key={item.title}
-                  src={item.image}
-                  alt={item.title}
+                  align="center"
                   width="214px"
                   height="168px"
-                  margin={{
-                    right: idx % 2 === 0 ? '10px' : 'auto',
-                    bottom: '10px',
-                  }}
-                />
+                  justify="end"
+                  className="hover-zoom"
+                  pad={{ bottom: 'small' }}
+                  background={`url(${item.image})`}
+                >
+                  <Text color="white" size="large" weight={700}>
+                    {item.title}
+                  </Text>
+                </Box>
               )
             })}
           </Box>

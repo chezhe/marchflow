@@ -24,7 +24,6 @@ export default function Layout({
   children: any
   activeNav: string
 }) {
-  const router = useRouter()
   return (
     <Grommet theme={grommet}>
       <Head>
@@ -41,6 +40,8 @@ export default function Layout({
             <Header
               background="#121212"
               height="80px"
+              width="100%"
+              style={{ position: 'fixed', left: 0, top: 0 }}
               pad={{ horizontal: 'large' }}
             >
               <Anchor icon={<Image src="/logo.svg" alt="logo" />} href="/" />
@@ -64,6 +65,7 @@ export default function Layout({
                         <Text
                           style={{
                             lineHeight: '80px',
+                            fontFamily: 'Microsoft YaHei',
                           }}
                           weight={700}
                           color={isActive ? '#F0183F' : 'white'}
@@ -79,7 +81,7 @@ export default function Layout({
           )
         }}
       </ResponsiveContext.Consumer>
-      <Main>
+      <Main pad={{ top: '80px' }}>
         <ResponsiveContext.Consumer>
           {(size) => {
             const isMobile = size === 'small'
