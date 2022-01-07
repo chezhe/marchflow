@@ -41,7 +41,7 @@ export default function Home() {
           </Box>
           <Text size="medium">{HOME.service.subtitle}</Text>
         </Box>
-        <Box direction="row" gap="small">
+        <Box direction="row" align="center" justify="center" gap="small">
           {HOME.service.items.slice(0, 3).map((item) => {
             return (
               <Box
@@ -60,22 +60,29 @@ export default function Home() {
               </Box>
             )
           })}
-          <Box direction="row" width="448px" align="center" wrap>
-            {HOME.service.items.slice(3).map((item, idx) => {
+          <Box direction="column" gap="small">
+            {_.chunk(HOME.service.items.slice(3), 2).map((items, idx) => {
               return (
-                <Box
-                  key={item.title}
-                  align="center"
-                  width="214px"
-                  height="168px"
-                  justify="end"
-                  className="hover-zoom"
-                  pad={{ bottom: 'small' }}
-                  background={`url(${item.image})`}
-                >
-                  <Text color="white" size="large" weight={700}>
-                    {item.title}
-                  </Text>
+                <Box direction="row" gap="small" key={idx}>
+                  {items.map((item) => {
+                    return (
+                      <Box
+                        key={item.title}
+                        align="center"
+                        width="214px"
+                        height="168px"
+                        justify="end"
+                        className="hover-zoom"
+                        pad={{ bottom: 'small' }}
+                        background={`url(${item.image})`}
+                        gap="medium"
+                      >
+                        <Text color="white" size="large" weight={700}>
+                          {item.title}
+                        </Text>
+                      </Box>
+                    )
+                  })}
                 </Box>
               )
             })}

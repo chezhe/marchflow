@@ -15,21 +15,23 @@ export default function About() {
             return (
               <Box key={idx} align="center" gap="small">
                 <Box direction="row" align="end" gap="small">
-                  <Text size="xxlarge" weight={700}>
+                  <Text size="64px" style={{ lineHeight: '64px' }} weight={700}>
                     {item.number}
                   </Text>
-                  <Text size="small">{item.quantifier}</Text>
+                  <Text size="20px">{item.quantifier}</Text>
                 </Box>
-                <Text>{item.desc}</Text>
+                <Text size="24px">{item.desc}</Text>
               </Box>
             )
           })}
         </Box>
 
-        <Box align="center" width="800px" gap="small">
-          <Text size="small">{ABOUT.desc1}</Text>
-          <Text size="small">{ABOUT.desc2}</Text>
-          <Text size="small">{ABOUT.desc3}</Text>
+        <Box align="center" width="1000px" gap="small">
+          <Text size="19px">{ABOUT.desc1}</Text>
+          <Text size="19px">{ABOUT.desc2}</Text>
+          <Text size="19px" style={{ lineHeight: 2 }}>
+            {ABOUT.desc3}
+          </Text>
         </Box>
 
         <Box
@@ -37,7 +39,7 @@ export default function About() {
           pad={{ vertical: '100px' }}
           width="100%"
           align="center"
-          gap="small"
+          gap="20px"
         >
           <Text weight={700} color="white" size="large">
             {ABOUT.value.title}

@@ -14,24 +14,33 @@ export default function Service() {
               <Box
                 key={item.title}
                 width="400px"
-                height="550px"
+                height="600px"
                 align="center"
                 justify="between"
                 pad={{ vertical: 'large' }}
               >
                 <Box align="center" gap="small">
-                  <Image width="400px" src={item.image} alt={item.title} />
-                  <Text size="large" weight={600}>
-                    {item.title}
-                  </Text>
+                  <Image
+                    width="400px"
+                    src={item.image}
+                    alt={item.title}
+                    style={{ marginBottom: 30 }}
+                  />
+                  <Text size="large">{item.title}</Text>
                   <Text color="#999">{item.title_en}</Text>
-                  <Text size="small">{item.desc}</Text>
+                  <Text size="xsmall" style={{ width: 300, lineHeight: 2 }}>
+                    {item.desc}
+                  </Text>
                 </Box>
 
                 <Button
                   color="#999"
-                  label="+MORE"
-                  style={{ fontWeight: 500 }}
+                  label="MORE+"
+                  style={{
+                    fontWeight: 400,
+                    borderWidth: 1,
+                    padding: '5px 50px',
+                  }}
                 />
               </Box>
             )
