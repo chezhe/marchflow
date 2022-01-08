@@ -4,6 +4,9 @@ import HOME from 'config/home.json'
 import CASE from 'config/case.json'
 import { useState } from 'react'
 import _ from 'lodash'
+import HoverCover from 'components/Hover/Cover'
+import HoverZoom from 'components/Hover/Zoom'
+import HoverZoom2 from 'components/Hover/Zoom2'
 
 export default function Home() {
   const [active, setActive] = useState(1)
@@ -43,45 +46,14 @@ export default function Home() {
         </Box>
         <Box direction="row" align="center" justify="center" gap="small">
           {HOME.service.items.slice(0, 3).map((item) => {
-            return (
-              <Box
-                key={item.title}
-                width="244px"
-                height="524px"
-                background={`url(${item.image})`}
-                align="center"
-                className="hover-zoom"
-                justify="end"
-                pad={{ bottom: 'small' }}
-              >
-                <Text color="white" size="large" weight={700}>
-                  {item.title}
-                </Text>
-              </Box>
-            )
+            return <HoverZoom2 key={item.title} item={item} />
           })}
           <Box direction="column" gap="small">
             {_.chunk(HOME.service.items.slice(3), 2).map((items, idx) => {
               return (
                 <Box direction="row" gap="small" key={idx}>
                   {items.map((item) => {
-                    return (
-                      <Box
-                        key={item.title}
-                        align="center"
-                        width="214px"
-                        height="168px"
-                        justify="end"
-                        className="hover-zoom"
-                        pad={{ bottom: 'small' }}
-                        background={`url(${item.image})`}
-                        gap="medium"
-                      >
-                        <Text color="white" size="large" weight={700}>
-                          {item.title}
-                        </Text>
-                      </Box>
-                    )
+                    return <HoverZoom key={item.title} item={item} />
                   })}
                 </Box>
               )
@@ -120,7 +92,12 @@ export default function Home() {
             return (
               <Box key={idx} align="center" gap="small">
                 <Box direction="row" align="end" gap="small">
-                  <Text color="white" size="xxlarge" weight={700}>
+                  <Text
+                    color="white"
+                    size="64px"
+                    style={{ lineHeight: '64px' }}
+                    weight={700}
+                  >
                     {item.number}
                   </Text>
                   <Text color="white" size="small">
@@ -160,15 +137,13 @@ export default function Home() {
                 <Box key={idx} direction="row" wrap={false}>
                   {items.map((item, index) => {
                     const _idx = idx * 3 + index + 1
+                    console.log(active, _idx)
                     return (
-                      <Image
-                        key={item.title}
-                        width="33%"
-                        src={`/case/${_idx}.jpg`}
-                        alt=""
-                        className={_idx === active ? 'active-case' : ''}
-                        onMouseEnter={() => setActive(_idx)}
-                        onMouseLeave={() => setActive(1)}
+                      <HoverCover
+                        key={_idx}
+                        idx={_idx}
+                        setActive={setActive}
+                        isActive={_idx === active}
                       />
                     )
                   })}

@@ -8,7 +8,7 @@ export default function Footer() {
       background="url(/footer.jpg)"
       pad={{ top: '500px', bottom: '300px', horizontal: '160px' }}
       direction="row"
-      style={{ position: 'relative' }}
+      style={{ position: 'relative', backgroundAttachment: 'fixed' }}
     >
       <Box
         background="linear-gradient(41.18deg, #0E0E0E 30.43%, rgba(6, 6, 6, 0.79) 67.49%, rgba(0, 0, 0, 0) 100%)"

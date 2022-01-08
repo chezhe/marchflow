@@ -6,9 +6,25 @@ export default function Service() {
   return (
     <Layout title={SERVICE.title} activeNav={SERVICE.title}>
       <Box align="center">
-        <Heading level={3}>{SERVICE.subtitle}</Heading>
+        <Box
+          background="url(/service/bg.jpg)"
+          width="100%"
+          height="280px"
+          align="center"
+          justify="end"
+          pad={{ bottom: '80px' }}
+        >
+          <Heading level={3}>{SERVICE.subtitle}</Heading>
+        </Box>
 
-        <Box direction="row" justify="center" align="center" wrap gap="small">
+        <Box
+          direction="row"
+          justify="center"
+          align="center"
+          wrap
+          gap="small"
+          style={{ position: 'relative', top: -100 }}
+        >
           {SERVICE.items.map((item) => {
             return (
               <Box

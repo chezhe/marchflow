@@ -41,7 +41,7 @@ export default function Layout({
               background="#121212"
               height="80px"
               width="100%"
-              style={{ position: 'fixed', left: 0, top: 0 }}
+              style={{ position: 'fixed', left: 0, top: 0, zIndex: 100 }}
               pad={{ horizontal: 'large' }}
             >
               <Anchor icon={<Image src="/logo.svg" alt="logo" />} href="/" />

@@ -6,10 +6,25 @@ import { Box, Heading, Text, Image } from 'grommet'
 export default function About() {
   return (
     <Layout title={ABOUT.title} activeNav={ABOUT.title}>
-      <Box align="center" gap="large">
-        <Heading level={3}>{ABOUT.subtitle}</Heading>
+      <Box align="center">
+        <Box
+          background="url(/about/bg.jpg)"
+          width="100%"
+          height="280px"
+          align="center"
+          justify="end"
+          pad={{ bottom: '80px' }}
+        >
+          <Heading level={3}>{ABOUT.subtitle}</Heading>
+        </Box>
 
-        <Image width="1480px" src="/about/header.png" alt="" />
+        <Image
+          width="1480px"
+          src="/about/header.png"
+          alt=""
+          style={{ position: 'relative', top: -50 }}
+        />
+
         <Box direction="row" gap="xlarge">
           {HOME.core.items.map((item, idx) => {
             return (
@@ -26,7 +41,12 @@ export default function About() {
           })}
         </Box>
 
-        <Box align="center" width="1000px" gap="small">
+        <Box
+          align="center"
+          width="1000px"
+          gap="small"
+          margin={{ vertical: 'large' }}
+        >
           <Text size="19px">{ABOUT.desc1}</Text>
           <Text size="19px">{ABOUT.desc2}</Text>
           <Text size="19px" style={{ lineHeight: 2 }}>
@@ -40,6 +60,7 @@ export default function About() {
           width="100%"
           align="center"
           gap="20px"
+          style={{ backgroundAttachment: 'fixed', backgroundSize: 'cover' }}
         >
           <Text weight={700} color="white" size="large">
             {ABOUT.value.title}
@@ -51,7 +72,12 @@ export default function About() {
           <Text color="white">{ABOUT.value.subtitle2}</Text>
         </Box>
 
-        <Box align="center" gap="large" pad={{ bottom: '70px' }}>
+        <Box
+          align="center"
+          gap="large"
+          margin={{ vertical: 'large' }}
+          pad={{ bottom: '70px' }}
+        >
           <Box>
             <Heading level={3} margin="none">
               {ABOUT.customers.title}

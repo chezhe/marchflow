@@ -9,13 +9,23 @@ export default function Case() {
   return (
     <Layout title={CASE.title} activeNav={CASE.title}>
       <Box align="center">
-        <Heading level={3}>{CASE.subtitle}</Heading>
+        <Box
+          background="url(/case/bg.jpg)"
+          width="100%"
+          height="280px"
+          align="center"
+          justify="end"
+          pad={{ bottom: '80px' }}
+        >
+          <Heading level={3}>{CASE.subtitle}</Heading>
+        </Box>
         <Box
           direction="row"
           width="91%"
           align="center"
           justify="between"
           pad={{ vertical: 'medium' }}
+          style={{ position: 'relative', top: -10 }}
         >
           <Text weight={600} size="large">
             CASES
