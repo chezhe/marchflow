@@ -26,7 +26,7 @@ export default function HoverZoom({
         justify="end"
         pad={{ bottom: 'small' }}
       >
-        <Text color="white" size="large" weight={700}>
+        <Text color="white" size={isMobile ? '13px' : 'large'} weight={700}>
           {item.title}
         </Text>
       </Box>
