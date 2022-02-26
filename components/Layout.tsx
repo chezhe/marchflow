@@ -44,40 +44,50 @@ export default function Layout({
               style={{ position: 'fixed', left: 0, top: 0, zIndex: 100 }}
               pad={{ horizontal: 'large' }}
             >
-              <Anchor icon={<Image src="/logo.svg" alt="logo" />} href="/" />
+              <Link href="/" passHref>
+                <Image
+                  src="/logo.svg"
+                  alt="logo"
+                  style={{ cursor: 'pointer' }}
+                />
+              </Link>
 
-              <Box direction="row" gap="large">
-                {NAV.menu.map((item) => {
-                  const isActive = activeNav === item.title
-                  return (
-                    <Box
-                      key={item.title}
-                      border={{
-                        side: 'bottom',
-                        size: '4px',
-                        color: isActive ? '#F0183F' : 'transparent',
-                      }}
-                      style={{
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <Link href={item.link} passHref>
-                        <Text
-                          style={{
-                            lineHeight: '80px',
-                            fontFamily: 'Microsoft YaHei',
-                          }}
-                          weight={700}
-                          size="small"
-                          color={isActive ? '#F0183F' : 'white'}
-                        >
-                          {item.title}
-                        </Text>
-                      </Link>
-                    </Box>
-                  )
-                })}
-              </Box>
+              {isMobile ? (
+                <Image src="/menu.svg" width="50px" alt="" />
+              ) : (
+                <Box direction="row" gap="large">
+                  {NAV.menu.map((item) => {
+                    const isActive = activeNav === item.title
+                    return (
+                      <Box
+                        key={item.title}
+                        border={{
+                          side: 'bottom',
+                          size: '4px',
+                          color: isActive ? '#F0183F' : 'transparent',
+                        }}
+                        style={{
+                          cursor: 'pointer',
+                        }}
+                      >
+                        <Link href={item.link} passHref>
+                          <Text
+                            style={{
+                              lineHeight: '80px',
+                              fontFamily: 'Microsoft YaHei',
+                            }}
+                            weight={700}
+                            size="small"
+                            color={isActive ? '#F0183F' : 'white'}
+                          >
+                            {item.title}
+                          </Text>
+                        </Link>
+                      </Box>
+                    )
+                  })}
+                </Box>
+              )}
             </Header>
           )
         }}

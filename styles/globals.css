@@ -50,3 +50,8 @@ a {
   font-weight: 400;
   font-size: 14px;
 }
+
+.logo-bg {
+  background-image: url('/bg.png');
+  background-repeat: repeat;
+}

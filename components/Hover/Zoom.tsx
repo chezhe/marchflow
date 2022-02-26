@@ -2,8 +2,10 @@ import { Box, Text, Image } from 'grommet'
 
 export default function HoverZoom({
   item,
+  isMobile,
 }: {
   item: { title: string; image: string }
+  isMobile: boolean
 }) {
   return (
     <Box

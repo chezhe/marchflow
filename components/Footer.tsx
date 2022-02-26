@@ -1,8 +1,124 @@
-import { Anchor, Box, Image, Text, Tip } from 'grommet'
+import {
+  Anchor,
+  Box,
+  Button,
+  Image,
+  ResponsiveContext,
+  Text,
+  Tip,
+} from 'grommet'
 import NAV from 'config/nav.json'
 import FOOTER from 'config/footer.json'
 
 export default function Footer() {
+  return (
+    <ResponsiveContext.Consumer>
+      {(size) => {
+        const isMobile = size === 'small'
+        if (isMobile) {
+          return <Mobile />
+        }
+        return <Desktop />
+      }}
+    </ResponsiveContext.Consumer>
+  )
+}
+
+const Mobile = () => {
+  return (
+    <Box background="url(/footer.jpg)" direction="column" width="100%">
+      <Box
+        style={{
+          background:
+            'linear-gradient(41.18deg, #0E0E0E 30.43%, rgba(6, 6, 6, 0.79) 67.49%, rgba(0, 0, 0, 0) 100%',
+        }}
+        pad={{ bottom: '100px' }}
+      >
+        <Box
+          direction="column"
+          align="center"
+          gap="8px"
+          margin={{ top: '30px' }}
+        >
+          <Text size="18px" weight="bold" color="white">
+            18768199698
+          </Text>
+          <Text size="10px" weight="bold" color="white">
+            {FOOTER.consult.tel}
+          </Text>
+
+          <Image src={FOOTER.social[0].hover} width="100px" alt="" />
+          <Text size="10px" weight="bold" color="white">
+            {FOOTER.consult.wecht}
+          </Text>
+        </Box>
+
+        <Box
+          direction="column"
+          align="center"
+          gap="8px"
+          margin={{ top: '24px' }}
+        >
+          <Text size="12px" weight="bold" color="white">
+            {FOOTER.contact.title}
+          </Text>
+          <Text size="10px" color="#999" style={{ whiteSpace: 'nowrap' }}>
+            {FOOTER.contact.compnay}
+          </Text>
+          <Text size="10px" color="#999" style={{ whiteSpace: 'nowrap' }}>
+            {FOOTER.contact.address}
+          </Text>
+        </Box>
+
+        <Box
+          direction="column"
+          align="center"
+          gap="8px"
+          margin={{ top: '34px' }}
+        >
+          <Text size="10px" color="white" style={{ whiteSpace: 'nowrap' }}>
+            {FOOTER.copyright}
+          </Text>
+          <Text size="10px" color="white" style={{ whiteSpace: 'nowrap' }}>
+            {FOOTER.record}
+          </Text>
+        </Box>
+
+        <Box
+          direction="row"
+          width="100%"
+          margin={{ top: '30px' }}
+          style={{ position: 'fixed', bottom: 0, left: 0, zIndex: 100 }}
+        >
+          <Button
+            icon={<Image src="/message.svg" alt="" />}
+            primary
+            color="rgba(122, 151, 254, 1)"
+            style={{
+              borderRadius: 0,
+              flex: 1,
+              textAlign: 'center',
+              padding: '20px 0',
+            }}
+          />
+          <Button
+            icon={<Image src="/phone.svg" alt="" />}
+            primary
+            color="rgba(122, 254, 246, 1)"
+            style={{
+              borderRadius: 0,
+              flex: 1,
+              textAlign: 'center',
+              padding: '20px 0',
+            }}
+          />
+        </Box>
+      </Box>
+    </Box>
+  )
+}
+
+const Desktop = () => {
   return (
     <Box
       background="url(/footer.jpg)"
@@ -19,7 +135,7 @@ export default function Footer() {
         style={{ position: 'absolute', top: 0, left: 0 }}
       >
         <Box direction="row" width="100%" justify="between">
-          <Box direction="row" gap="large">
+          <Box direction="row" gap="120px">
             <Box gap="small">
               <Text color="white" weight={700}>
                 NAV

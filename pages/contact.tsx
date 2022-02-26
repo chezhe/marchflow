@@ -1,100 +1,116 @@
 import Layout from 'components/Layout'
+import Location from 'components/Location'
 import CONTACT from 'config/contact.json'
-import { Box, Button, Heading, Image, Text, TextArea, TextInput } from 'grommet'
+import {
+  Box,
+  Button,
+  Heading,
+  Image,
+  ResponsiveContext,
+  Text,
+  TextArea,
+  TextInput,
+} from 'grommet'
 
 export default function Contact() {
   const borderRadius = { borderRadius: 0 }
   return (
     <Layout title={CONTACT.title} activeNav={CONTACT.title}>
-      <Box align="center" pad={{ bottom: 'large' }}>
-        <Box
-          background="url(/contact/bg.jpg)"
-          width="100%"
-          height="280px"
-          align="center"
-          justify="end"
-          pad={{ bottom: '80px' }}
-        >
-          <Heading level={3}>{CONTACT.subtitle}</Heading>
-        </Box>
+      <ResponsiveContext.Consumer>
+        {(size) => {
+          const isMobile = size === 'small'
+          return (
+            <Box align="center" pad={{ bottom: 'large' }}>
+              <Box
+                background="url(/contact/bg.jpg)"
+                width="100%"
+                height="280px"
+                align="center"
+                justify="end"
+                pad={{ bottom: '80px' }}
+              >
+                <Heading level={3}>{CONTACT.subtitle}</Heading>
+              </Box>
 
-        <Box gap="medium" style={{ position: 'relative', top: -50 }}>
-          <Image src={CONTACT.jiangsu.image} width="1000px" alt="" />
-          <Box direction="row" justify="between">
-            <Box gap="small">
-              <Text color="#666" size="16px">
-                {CONTACT.jiangsu.address}
-              </Text>
-              <Text color="#666" size="16px">
-                {CONTACT.jiangsu.tel}
-              </Text>
-              <Text color="#666" size="16px">
-                {CONTACT.jiangsu.weixin}
-              </Text>
+              <Location
+                isMobile={isMobile}
+                image={CONTACT.jiangsu.image}
+                address={CONTACT.jiangsu.address}
+                tel={CONTACT.jiangsu.tel}
+                wechat={CONTACT.jiangsu.weixin}
+                province={CONTACT.jiangsu.province}
+                company={CONTACT.jiangsu.company}
+              />
+
+              <Location
+                isMobile={isMobile}
+                image={CONTACT.zhejiang.image}
+                address={CONTACT.zhejiang.address}
+                tel={CONTACT.zhejiang.tel}
+                wechat={CONTACT.zhejiang.weixin}
+                province={CONTACT.zhejiang.province}
+                company={CONTACT.zhejiang.company}
+              />
+
+              <Box
+                width={isMobile ? '90%' : '1000px'}
+                height="1px"
+                background="#D2D2D2"
+              />
+
+              <Box
+                width={isMobile ? '90%' : '1000px'}
+                gap="small"
+                margin={{ vertical: 'large' }}
+              >
+                <Box
+                  direction={isMobile ? 'column' : 'row'}
+                  align="center"
+                  justify="between"
+                  gap="small"
+                >
+                  <TextInput placeholder="姓名" style={borderRadius} />
+                  <TextInput placeholder="电话" style={borderRadius} />
+                  <TextInput placeholder="邮箱" style={borderRadius} />
+                </Box>
+                <TextArea rows={5} placeholder="内容" style={borderRadius} />
+                <Box direction="row" flex>
+                  <Button
+                    color="#0C0D10"
+                    label="提交"
+                    primary
+                    style={{
+                      ...borderRadius,
+                      padding: isMobile ? '15px' : '5px 50px',
+                      width: isMobile ? '100%' : '',
+                    }}
+                  />
+                </Box>
+              </Box>
+
+              <Box
+                width={isMobile ? '90%' : '1000px'}
+                direction={isMobile ? 'column-reverse' : 'row'}
+                align={isMobile ? 'start' : 'center'}
+                justify="between"
+                pad={isMobile ? 'small' : 'none'}
+              >
+                <Box gap="small">
+                  <Text color="#666" size="16px">
+                    {CONTACT.apply.mail}
+                  </Text>
+                  <Text color="#666" size="16px">
+                    {CONTACT.apply.mail_title}
+                  </Text>
+                </Box>
+                <Text size="32px" style={{ marginBottom: isMobile ? 20 : 0 }}>
+                  {CONTACT.apply.title}
+                </Text>
+              </Box>
             </Box>
-            <Box align="end" gap="medium">
-              <Text size="32px">{CONTACT.jiangsu.province}</Text>
-              <Text color="#666" size="16px">
-                {CONTACT.jiangsu.company}
-              </Text>
-            </Box>
-          </Box>
-        </Box>
-
-        <Box gap="medium" margin={{ bottom: 'large' }}>
-          <Image src={CONTACT.zhejiang.image} width="1000px" alt="" />
-          <Box direction="row" justify="between">
-            <Box gap="small">
-              <Text color="#666" size="16px">
-                {CONTACT.zhejiang.address}
-              </Text>
-              <Text color="#666" size="16px">
-                {CONTACT.zhejiang.tel}
-              </Text>
-              <Text color="#666" size="16px">
-                {CONTACT.zhejiang.weixin}
-              </Text>
-            </Box>
-            <Box align="end" gap="medium">
-              <Text size="32px">{CONTACT.zhejiang.province}</Text>
-              <Text color="#666" size="16px">
-                {CONTACT.zhejiang.company}
-              </Text>
-            </Box>
-          </Box>
-        </Box>
-
-        <Box width="1000px" height="1px" background="#D2D2D2" />
-
-        <Box width="1000px" gap="small" margin={{ vertical: 'large' }}>
-          <Box direction="row" align="center" justify="between" gap="small">
-            <TextInput placeholder="姓名" style={borderRadius} />
-            <TextInput placeholder="电话" style={borderRadius} />
-            <TextInput placeholder="邮箱" style={borderRadius} />
-          </Box>
-          <TextArea rows={5} placeholder="内容" style={borderRadius} />
-          <Box direction="row">
-            <Button
-              color="#0C0D10"
-              label="提交"
-              primary
-              style={{ ...borderRadius, padding: '5px 50px' }}
-            />
-          </Box>
-        </Box>
-
-        <Box width="1000px" direction="row" align="center" justify="between">
-          <Box gap="small">
-            <Text color="#666" size="16px">
-              {CONTACT.apply.mail}
-            </Text>
-            <Text color="#666" size="16px">
-              {CONTACT.apply.mail_title}
-            </Text>
-          </Box>
-          <Text size="32px">{CONTACT.apply.title}</Text>
-        </Box>
-      </Box>
+          )
+        }}
+      </ResponsiveContext.Consumer>
     </Layout>
   )
 }
