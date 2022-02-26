@@ -4,13 +4,15 @@ export default function HoverCover({
   idx,
   isActive,
   setActive,
+  isMobile,
 }: {
   idx: number
   isActive: boolean
   setActive: (idx: number) => void
+  isMobile: boolean
 }) {
   return (
-    <Box width="33%" style={{ position: 'relative' }}>
+    <Box width={isMobile ? '100%' : '33%'} style={{ position: 'relative' }}>
       <Image
         src={`/case/${idx}.jpg`}
         alt=""

@@ -15,14 +15,13 @@ export default function Home() {
     <Layout title={HOME.title} activeNav={HOME.title}>
       <ResponsiveContext.Consumer>
         {(size) => {
-          console.log('size', size)
           const isMobile = size === 'small'
 
           return (
             <Box>
               <Box
-                pad={{ top: '170px' }}
-                height="900px"
+                pad={{ top: isMobile ? '44px' : '170px' }}
+                height={isMobile ? '450px' : '900px'}
                 background={`url(${HOME.banner.backgroundImage})`}
                 align="center"
                 gap="xlarge"
@@ -35,7 +34,11 @@ export default function Home() {
                 >
                   {HOME.banner.title}
                 </Heading>
-                <Image src={HOME.banner.companyImage} alt="company" />
+                <Image
+                  src={HOME.banner.companyImage}
+                  alt="company"
+                  width={isMobile ? '50%' : ''}
+                />
                 <Box
                   direction="row"
                   justify="center"
@@ -60,7 +63,10 @@ export default function Home() {
 
               <Box
                 align="center"
-                pad={{ top: '150px', bottom: '90px' }}
+                pad={{
+                  top: isMobile ? '25px' : '150px',
+                  bottom: isMobile ? '20px' : '90px',
+                }}
                 gap="large"
                 className="logo-bg"
               >
@@ -81,7 +87,11 @@ export default function Home() {
                   justify="center"
                   gap="small"
                 >
-                  <Box direction="row" gap="small">
+                  <Box
+                    direction="row"
+                    gap="small"
+                    width={isMobile ? '90%' : ''}
+                  >
                     {HOME.service.items.slice(0, 3).map((item) => {
                       return (
                         <HoverZoom2
@@ -92,7 +102,11 @@ export default function Home() {
                       )
                     })}
                   </Box>
-                  <Box direction="column" gap="small">
+                  <Box
+                    direction="column"
+                    gap="small"
+                    width={isMobile ? '90%' : ''}
+                  >
                     {_.chunk(HOME.service.items.slice(3), 2).map(
                       (items, idx) => {
                         return (
@@ -124,45 +138,60 @@ export default function Home() {
 
               <Box
                 background="url(/home/core.jpg)"
-                pad={{ vertical: '120px' }}
+                pad={{ top: '100px', bottom: '100px' }}
                 align="center"
                 gap="large"
               >
-                <Box align="center">
-                  <Heading level={2} margin="none" color="white">
-                    {HOME.core.title}
-                  </Heading>
-                  <Text color="#999">{HOME.core.title_en}</Text>
-                </Box>
-
-                <Box align="center" margin={{ vertical: 'large' }}>
-                  <Text color="white" size="86px" weight={700}>
+                <Box
+                  align="center"
+                  margin={{ top: '50px' }}
+                  gap={isMobile ? '13px' : ''}
+                >
+                  <Text
+                    color="white"
+                    size={isMobile ? '28px' : '86px'}
+                    weight={700}
+                  >
                     {HOME.core.subtitle1}
                   </Text>
-                  <Image src={HOME.core.x} width="180px" alt="core" />
-                  <Text color="white" size="86px" weight={700}>
+                  <Image
+                    src={HOME.core.x}
+                    width={isMobile ? '80px' : '180px'}
+                    alt="core"
+                  />
+                  <Text
+                    color="white"
+                    size={isMobile ? '28px' : '86px'}
+                    weight={700}
+                  >
                     {HOME.core.subtitle2}
                   </Text>
                 </Box>
 
-                <Box direction="row" gap="xlarge">
+                <Box
+                  direction="row"
+                  gap={isMobile ? 'medium' : 'xlarge'}
+                  margin={{ top: isMobile ? '0px' : '' }}
+                >
                   {HOME.core.items.map((item, idx) => {
                     return (
                       <Box key={idx} align="center" gap="small">
                         <Box direction="row" align="end" gap="small">
                           <Text
                             color="white"
-                            size="64px"
-                            style={{ lineHeight: '64px' }}
+                            size={isMobile ? '20px' : '64px'}
+                            style={{ lineHeight: isMobile ? '20px' : '64px' }}
                             weight={700}
                           >
                             {item.number}
                           </Text>
-                          <Text color="white" size="small">
+                          <Text color="white" size={isMobile ? '8px' : 'small'}>
                             {item.quantifier}
                           </Text>
                         </Box>
-                        <Text color="white">{item.desc}</Text>
+                        <Text color="white" size={isMobile ? '8px' : 'medium'}>
+                          {item.desc}
+                        </Text>
                       </Box>
                     )
                   })}
@@ -171,43 +200,53 @@ export default function Home() {
 
               <Box
                 background="#17181A"
-                pad={{ top: '120px', bottom: '70px' }}
+                pad={{
+                  top: isMobile ? '25px' : '120px',
+                  bottom: isMobile ? '20px' : '70px',
+                }}
                 gap="large"
                 align="center"
               >
                 <Box align="center">
-                  <Heading level={3} margin="none">
+                  <Text size={isMobile ? '14px' : 'xlarge'} weight={800}>
                     {HOME.case.title}
-                  </Heading>
-                  <Text color="#999">{HOME.case.title_en}</Text>
+                  </Text>
+                  <Text color="#999" size={isMobile ? '10px' : 'medium'}>
+                    {HOME.case.title_en}
+                  </Text>
                 </Box>
 
                 <Box direction="row" wrap={false}>
-                  <Image
-                    src={`/case/${active}.jpg`}
-                    width="50%"
-                    style={{ objectFit: 'contain' }}
-                    alt=""
-                  />
+                  {!isMobile && (
+                    <Image
+                      src={`/case/${active}.jpg`}
+                      width="50%"
+                      style={{ objectFit: 'contain' }}
+                      alt=""
+                    />
+                  )}
                   <Box direction="row" wrap>
-                    {_.chunk(CASE.items.slice(0, 9), 3).map((items, idx) => {
-                      return (
-                        <Box key={idx} direction="row" wrap={false}>
-                          {items.map((item, index) => {
-                            const _idx = idx * 3 + index + 1
-                            console.log(active, _idx)
-                            return (
-                              <HoverCover
-                                key={_idx}
-                                idx={_idx}
-                                setActive={setActive}
-                                isActive={_idx === active}
-                              />
-                            )
-                          })}
-                        </Box>
-                      )
-                    })}
+                    {_.chunk(CASE.items.slice(0, 9), isMobile ? 1 : 3).map(
+                      (items, idx) => {
+                        return (
+                          <Box key={idx} direction="row" wrap={false}>
+                            {items.map((item, index) => {
+                              const _idx = idx * (isMobile ? 1 : 3) + index + 1
+
+                              return (
+                                <HoverCover
+                                  key={_idx}
+                                  idx={_idx}
+                                  setActive={setActive}
+                                  isActive={!isMobile && _idx === active}
+                                  isMobile={isMobile}
+                                />
+                              )
+                            })}
+                          </Box>
+                        )
+                      }
+                    )}
                   </Box>
                 </Box>
                 <Button
@@ -220,19 +259,23 @@ export default function Home() {
               </Box>
 
               <Box
-                pad={{ top: '120px', bottom: '70px' }}
+                pad={{ top: isMobile ? '30px' : '120px', bottom: '70px' }}
                 gap="large"
                 align="center"
                 className="logo-bg"
               >
                 <Box align="center" gap="medium">
-                  <Box align="center">
-                    <Heading level={3} margin="none">
+                  <Box align="center" gap="small">
+                    <Text weight="bolder" size={isMobile ? '12px' : '28px'}>
                       {HOME.partner.title}
-                    </Heading>
-                    <Text color="#999">{HOME.partner.title_en}</Text>
+                    </Text>
+                    <Text color="#999" size={isMobile ? '10px' : 'medium'}>
+                      {HOME.partner.title_en}
+                    </Text>
                   </Box>
-                  <Text size="medium">{HOME.partner.subtitle}</Text>
+                  <Text size={isMobile ? '10px' : 'medium'}>
+                    {HOME.partner.subtitle}
+                  </Text>
                 </Box>
                 <Box
                   direction="row"
@@ -241,7 +284,11 @@ export default function Home() {
                   gap="small"
                   wrap
                 >
-                  <Image src="/home/partner/index.png" alt="" />
+                  <Image
+                    width={isMobile ? '90%' : ''}
+                    src="/home/partner/index.png"
+                    alt=""
+                  />
                 </Box>
               </Box>
             </Box>

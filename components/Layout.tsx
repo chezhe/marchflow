@@ -39,7 +39,7 @@ export default function Layout({
           return (
             <Header
               background="#121212"
-              height="80px"
+              height={isMobile ? '44px' : '80px'}
               width="100%"
               style={{ position: 'fixed', left: 0, top: 0, zIndex: 100 }}
               pad={{ horizontal: 'large' }}
@@ -48,12 +48,13 @@ export default function Layout({
                 <Image
                   src="/logo.svg"
                   alt="logo"
+                  height={isMobile ? '20px' : ''}
                   style={{ cursor: 'pointer' }}
                 />
               </Link>
 
               {isMobile ? (
-                <Image src="/menu.svg" width="50px" alt="" />
+                <Image src="/menu.svg" width="30px" alt="" />
               ) : (
                 <Box direction="row" gap="large">
                   {NAV.menu.map((item) => {
@@ -92,14 +93,22 @@ export default function Layout({
           )
         }}
       </ResponsiveContext.Consumer>
-      <Main pad={{ top: '80px' }}>
-        <ResponsiveContext.Consumer>
-          {(size) => {
-            const isMobile = size === 'small'
-            return <Box>{children}</Box>
-          }}
-        </ResponsiveContext.Consumer>
-      </Main>
+
+      <ResponsiveContext.Consumer>
+        {(size) => {
+          const isMobile = size === 'small'
+          return (
+            <Main pad={{ top: isMobile ? '44px' : '80px' }}>
+              <ResponsiveContext.Consumer>
+                {(size) => {
+                  const isMobile = size === 'small'
+                  return <Box>{children}</Box>
+                }}
+              </ResponsiveContext.Consumer>
+            </Main>
+          )
+        }}
+      </ResponsiveContext.Consumer>
       <Footer />
     </Grommet>
   )
