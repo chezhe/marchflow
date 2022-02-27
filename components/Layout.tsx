@@ -12,8 +12,9 @@ import {
 import Head from 'next/head'
 import Link from 'next/link'
 import NAV from 'config/nav.json'
-import { useRouter } from 'next/router'
 import Footer from './Footer'
+import { useState } from 'react'
+import Drawer from './Drawer'
 
 export default function Layout({
   title,
@@ -24,6 +25,7 @@ export default function Layout({
   children: any
   activeNav: string
 }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
     <Grommet theme={grommet}>
       <Head>
@@ -42,7 +44,7 @@ export default function Layout({
               height={isMobile ? '44px' : '80px'}
               width="100%"
               style={{ position: 'fixed', left: 0, top: 0, zIndex: 100 }}
-              pad={{ horizontal: 'large' }}
+              pad={{ horizontal: isMobile ? 'medium' : 'large' }}
             >
               <Link href="/" passHref>
                 <Image
@@ -53,8 +55,20 @@ export default function Layout({
                 />
               </Link>
 
+              {isMenuOpen && (
+                <Drawer
+                  onClose={() => setIsMenuOpen(false)}
+                  activeNav={activeNav}
+                />
+              )}
+
               {isMobile ? (
-                <Image src="/menu.svg" width="30px" alt="" />
+                <Image
+                  src={isMenuOpen ? '/x.svg' : '/menu.svg'}
+                  width="30px"
+                  alt=""
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                />
               ) : (
                 <Box direction="row" gap="large">
                   {NAV.menu.map((item) => {

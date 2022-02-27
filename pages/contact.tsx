@@ -1,3 +1,4 @@
+import Hat from 'components/Hat'
 import Layout from 'components/Layout'
 import Location from 'components/Location'
 import CONTACT from 'config/contact.json'
@@ -21,16 +22,7 @@ export default function Contact() {
           const isMobile = size === 'small'
           return (
             <Box align="center" pad={{ bottom: 'large' }}>
-              <Box
-                background="url(/contact/bg.jpg)"
-                width="100%"
-                height="280px"
-                align="center"
-                justify="end"
-                pad={{ bottom: '80px' }}
-              >
-                <Heading level={3}>{CONTACT.subtitle}</Heading>
-              </Box>
+              <Hat title={CONTACT.subtitle} url="/contact/bg.jpg" />
 
               <Location
                 isMobile={isMobile}
@@ -73,7 +65,12 @@ export default function Contact() {
                   <TextInput placeholder="电话" style={borderRadius} />
                   <TextInput placeholder="邮箱" style={borderRadius} />
                 </Box>
-                <TextArea rows={5} placeholder="内容" style={borderRadius} />
+                <TextArea
+                  rows={5}
+                  placeholder="内容"
+                  style={borderRadius}
+                  resize={false}
+                />
                 <Box direction="row" flex>
                   <Button
                     color="#0C0D10"
@@ -83,6 +80,7 @@ export default function Contact() {
                       ...borderRadius,
                       padding: isMobile ? '15px' : '5px 50px',
                       width: isMobile ? '100%' : '',
+                      fontWeight: 400,
                     }}
                   />
                 </Box>
@@ -96,14 +94,17 @@ export default function Contact() {
                 pad={isMobile ? 'small' : 'none'}
               >
                 <Box gap="small">
-                  <Text color="#666" size="16px">
+                  <Text color="#666" size={isMobile ? '12px' : '16px'}>
                     {CONTACT.apply.mail}
                   </Text>
-                  <Text color="#666" size="16px">
+                  <Text color="#666" size={isMobile ? '12px' : '16px'}>
                     {CONTACT.apply.mail_title}
                   </Text>
                 </Box>
-                <Text size="32px" style={{ marginBottom: isMobile ? 20 : 0 }}>
+                <Text
+                  size={isMobile ? '20px' : '32px'}
+                  style={{ marginBottom: isMobile ? 20 : 0 }}
+                >
                   {CONTACT.apply.title}
                 </Text>
               </Box>

@@ -88,7 +88,7 @@ const Mobile = () => {
           direction="row"
           width="100%"
           margin={{ top: '30px' }}
-          style={{ position: 'fixed', bottom: 0, left: 0, zIndex: 100 }}
+          style={{ position: 'fixed', bottom: 0, left: 0, zIndex: 10 }}
         >
           <Button
             icon={<Image src="/message.svg" alt="" />}

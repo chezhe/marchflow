@@ -3,6 +3,7 @@ import CASE from 'config/case.json'
 import { Box, Heading, Text, Image, ResponsiveContext } from 'grommet'
 import { useState } from 'react'
 import _ from 'lodash'
+import Hat from 'components/Hat'
 
 export default function Case() {
   const [active, setActive] = useState('ALL')
@@ -13,18 +14,8 @@ export default function Case() {
           const isMobile = size === 'small'
           return (
             <Box align="center">
-              <Box
-                background="url(/case/bg.jpg)"
-                width="100%"
-                height="280px"
-                align="center"
-                justify="end"
-                pad={{ bottom: '120px' }}
-              >
-                <Heading level={3} margin="none">
-                  {CASE.subtitle}
-                </Heading>
-              </Box>
+              <Hat title={CASE.subtitle} url="/case/bg.jpg" />
+
               <Box
                 direction="row"
                 width="91%"

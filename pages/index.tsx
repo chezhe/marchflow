@@ -132,6 +132,7 @@ export default function Home() {
                   color="#EF3254"
                   label="探索更多"
                   href="/service"
+                  size={isMobile ? 'small' : 'medium'}
                   style={{ fontWeight: 400, padding: '5px 40px' }}
                 />
               </Box>
@@ -254,6 +255,7 @@ export default function Home() {
                   color="white"
                   label="探索更多"
                   href="/case"
+                  size={isMobile ? 'small' : 'medium'}
                   style={{ fontWeight: 400, padding: '5px 40px' }}
                 />
               </Box>

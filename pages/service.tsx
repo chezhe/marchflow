@@ -1,3 +1,4 @@
+import Hat from 'components/Hat'
 import Layout from 'components/Layout'
 import SERVICE from 'config/service.json'
 import { Box, Button, Heading, Image, ResponsiveContext, Text } from 'grommet'
@@ -10,16 +11,7 @@ export default function Service() {
           const isMobile = size === 'small'
           return (
             <Box align="center">
-              <Box
-                background="url(/service/bg.jpg)"
-                width="100%"
-                height="280px"
-                align="center"
-                justify="end"
-                pad={{ bottom: '80px' }}
-              >
-                <Heading level={3}>{SERVICE.subtitle}</Heading>
-              </Box>
+              <Hat title={SERVICE.subtitle} url="/service/bg.jpg" />
 
               <Box
                 direction="row"
@@ -28,6 +20,7 @@ export default function Service() {
                 wrap
                 gap="small"
                 style={{ position: 'relative', top: -100 }}
+                pad={{ top: '30px' }}
               >
                 {SERVICE.items.map((item) => {
                   return (

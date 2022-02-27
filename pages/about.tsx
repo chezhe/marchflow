@@ -1,3 +1,4 @@
+import Hat from 'components/Hat'
 import Layout from 'components/Layout'
 import ABOUT from 'config/about.json'
 import HOME from 'config/home.json'
@@ -15,22 +16,13 @@ export default function About() {
           const descSize = isMobile ? '12px' : '19px'
           return (
             <Box align="center">
-              <Box
-                background="url(/about/bg.jpg)"
-                width="100%"
-                height="280px"
-                align="center"
-                justify="end"
-                pad={{ bottom: '80px' }}
-              >
-                <Heading level={3}>{ABOUT.subtitle}</Heading>
-              </Box>
+              <Hat title={ABOUT.subtitle} url="/about/bg.jpg" />
 
               <Image
                 width={isMobile ? '100%' : '1480px'}
                 src="/about/header.png"
                 alt=""
-                style={{ position: 'relative', top: -50 }}
+                style={{ position: 'relative', top: isMobile ? 0 : -10 }}
               />
 
               <Box direction="row" gap={isMobile ? 'medium' : 'xlarge'}>

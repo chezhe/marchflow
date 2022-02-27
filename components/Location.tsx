@@ -39,8 +39,8 @@ export default function Location({
           </Text>
         </Box>
         <Box direction="column" align={isMobile ? 'start' : 'end'} gap="medium">
-          <Text size="32px">{province}</Text>
-          <Text color="#666" size={fsize}>
+          <Text size={isMobile ? '20px' : '32px'}>{province}</Text>
+          <Text color="#666" size={isMobile ? '14px' : '16px'}>
             {company}
           </Text>
         </Box>
