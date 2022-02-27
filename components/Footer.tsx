@@ -98,7 +98,7 @@ const Mobile = () => {
               borderRadius: 0,
               flex: 1,
               textAlign: 'center',
-              padding: '20px 0',
+              padding: '15px 0',
             }}
           />
           <Button
@@ -109,7 +109,7 @@ const Mobile = () => {
               borderRadius: 0,
               flex: 1,
               textAlign: 'center',
-              padding: '20px 0',
+              padding: '15px 0',
             }}
           />
         </Box>

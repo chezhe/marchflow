@@ -19,7 +19,7 @@ export default function Service() {
                 align="center"
                 wrap
                 gap="small"
-                style={{ position: 'relative', top: -100 }}
+                style={{ position: 'relative', top: isMobile ? -10 : -100 }}
                 pad={{ top: '30px' }}
               >
                 {SERVICE.items.map((item) => {
