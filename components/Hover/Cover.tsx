@@ -12,7 +12,11 @@ export default function HoverCover({
   isMobile: boolean
 }) {
   return (
-    <Box width={isMobile ? '100%' : '33%'} style={{ position: 'relative' }}>
+    <Box
+      width={isMobile ? '100%' : '33%'}
+      style={{ position: 'relative' }}
+      height={isMobile ? '70vw' : ''}
+    >
       <Image
         src={`/case/${idx}.jpg`}
         alt=""

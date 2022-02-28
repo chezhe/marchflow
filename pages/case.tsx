@@ -34,7 +34,7 @@ export default function Case() {
                   direction="row"
                   align="center"
                   gap="medium"
-                  style={{ overflowX: 'scroll' }}
+                  style={{ overflowX: isMobile ? 'scroll' : 'auto' }}
                 >
                   {CASE.categories.map((item, idx) => {
                     const isActive = active === item
@@ -66,6 +66,9 @@ export default function Case() {
                 pad={{ bottom: isMobile ? 'none' : 'large' }}
               >
                 {_.chunk(CASE.items, isMobile ? 1 : 2).map((items, idx) => {
+                  if (items.length === 1) {
+                    return null
+                  }
                   return (
                     <Box
                       key={idx}
