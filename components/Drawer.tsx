@@ -17,6 +17,7 @@ export default function Drawer({ onClose, activeNav }) {
       <Box direction="column" gap="small" pad={{ left: '38px', top: '50px' }}>
         {NAV.menu.map((item) => {
           const isActive = activeNav === item.title
+          
           return (
             <Box
               key={item.title}

@@ -31,8 +31,9 @@ const Mobile = () => {
         style={{
           background:
             'linear-gradient(41.18deg, #0E0E0E 30.43%, rgba(6, 6, 6, 0.79) 67.49%, rgba(0, 0, 0, 0) 100%',
+          
         }}
-        pad={{ bottom: '100px' }}
+        pad={{ bottom:  '100px' }}
       >
         <Box
           direction="column"
@@ -122,16 +123,23 @@ const Desktop = () => {
   return (
     <Box
       background="url(/footer.jpg)"
-      pad={{ top: '500px', bottom: '300px', horizontal: '160px' }}
+      pad={{
+        top: '500px', bottom: '300px', horizontal: '160px'
+      }}
       direction="row"
-      style={{ position: 'relative', backgroundAttachment: 'fixed' }}
+      style={{
+        position: 'relative',
+        backgroundAttachment: 'fixed',
+        height: '100vh',
+        minHeight: '800px'
+      }}
     >
       <Box
         background="linear-gradient(41.18deg, #0E0E0E 30.43%, rgba(6, 6, 6, 0.79) 67.49%, rgba(0, 0, 0, 0) 100%)"
         width="100%"
         height="100%"
         direction="column"
-        pad={{ horizontal: '160px', top: '300px' }}
+        pad={{ horizontal: '160px', top: '200px' }}
         style={{ position: 'absolute', top: 0, left: 0 }}
       >
         <Box direction="row" width="100%" justify="between">
