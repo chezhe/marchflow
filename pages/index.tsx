@@ -285,10 +285,11 @@ export default function Home() {
                   justify="center"
                   gap="small"
                   wrap
+                  width="100%"
                 >
                   <Image
-                    width={isMobile ? '90%' : ''}
-                    src="/home/partner/index.png"
+                    width={isMobile ? '90%' : '1000px'}
+                    src="/home/partner.png"
                     alt=""
                   />
                 </Box>

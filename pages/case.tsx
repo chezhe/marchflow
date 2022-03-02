@@ -66,7 +66,7 @@ export default function Case() {
                 pad={{ bottom: isMobile ? 'none' : 'large' }}
               >
                 {_.chunk(CASE.items, isMobile ? 1 : 2).map((items, idx) => {
-                  if (items.length === 1) {
+                  if (!isMobile && items.length === 1) {
                     return null
                   }
                   return (
