@@ -86,7 +86,7 @@ export default function Case() {
                           }
                         })
                         .map((item, index) => {
-                          const key = idx * 2 + index + 1
+                          const key = idx * (isMobile ? 1 : 2) + index + 1
                           return (
                             <Image
                               width={isMobile ? '100%' : '45%'}

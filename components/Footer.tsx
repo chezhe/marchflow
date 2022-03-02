@@ -8,6 +8,7 @@ import {
   Tip,
 } from 'grommet'
 import NAV from 'config/nav.json'
+import Link from 'next/link'
 import FOOTER from 'config/footer.json'
 
 export default function Footer() {
@@ -31,9 +32,8 @@ const Mobile = () => {
         style={{
           background:
             'linear-gradient(41.18deg, #0E0E0E 30.43%, rgba(6, 6, 6, 0.79) 67.49%, rgba(0, 0, 0, 0) 100%',
-          
         }}
-        pad={{ bottom:  '100px' }}
+        pad={{ bottom: '100px' }}
       >
         <Box
           direction="column"
@@ -81,7 +81,9 @@ const Mobile = () => {
             {FOOTER.copyright}
           </Text>
           <Text size="10px" color="white" style={{ whiteSpace: 'nowrap' }}>
-            {FOOTER.record}
+            <Link href="http://beian.miit.gov.cn" passHref>
+              {FOOTER.record}
+            </Link>
           </Text>
         </Box>
 
@@ -106,6 +108,7 @@ const Mobile = () => {
             icon={<Image src="/phone.svg" alt="" />}
             primary
             color="rgba(122, 254, 246, 1)"
+            href="tel:18768199698"
             style={{
               borderRadius: 0,
               flex: 1,
@@ -124,14 +127,16 @@ const Desktop = () => {
     <Box
       background="url(/footer.jpg)"
       pad={{
-        top: '500px', bottom: '300px', horizontal: '160px'
+        top: '500px',
+        bottom: '300px',
+        horizontal: '160px',
       }}
       direction="row"
       style={{
         position: 'relative',
         backgroundAttachment: 'fixed',
         height: '100vh',
-        minHeight: '800px'
+        minHeight: '800px',
       }}
     >
       <Box
@@ -266,7 +271,9 @@ const Desktop = () => {
             {FOOTER.copyright}
           </Text>
           <Text size="16px" color="white">
-            {FOOTER.record}
+            <Link href="http://beian.miit.gov.cn" passHref>
+              {FOOTER.record}
+            </Link>
           </Text>
         </Box>
       </Box>
