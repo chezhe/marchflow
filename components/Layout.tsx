@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import {
   Anchor,
   Box,
@@ -33,6 +34,7 @@ export default function Layout({
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="referrer" content="no-referrer" />
+        <script type="application/javascript" src="/baidu.js" />
       </Head>
       <ResponsiveContext.Consumer>
         {(size) => {
