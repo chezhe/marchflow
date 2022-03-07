@@ -34,7 +34,7 @@ export default function Contact() {
                 company={CONTACT.jiangsu.company}
               />
 
-              <Location
+              {/* <Location
                 isMobile={isMobile}
                 image={CONTACT.zhejiang.image}
                 address={CONTACT.zhejiang.address}
@@ -42,7 +42,7 @@ export default function Contact() {
                 wechat={CONTACT.zhejiang.weixin}
                 province={CONTACT.zhejiang.province}
                 company={CONTACT.zhejiang.company}
-              />
+              /> */}
 
               <Box
                 width={isMobile ? '90%' : '1000px'}
