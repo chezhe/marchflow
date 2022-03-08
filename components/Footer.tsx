@@ -103,6 +103,9 @@ const Mobile = () => {
               textAlign: 'center',
               padding: '15px 0',
             }}
+            onClick={() => {
+              document.getElementById('nb_icon_wrap')?.click()
+            }}
           />
           <Button
             icon={<Image src="/phone.svg" alt="" />}

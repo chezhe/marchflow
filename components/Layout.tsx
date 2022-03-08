@@ -16,6 +16,7 @@ import NAV from 'config/nav.json'
 import Footer from './Footer'
 import { useState } from 'react'
 import Drawer from './Drawer'
+import FixedContact from './FixedContact'
 
 export default function Layout({
   title,
@@ -33,7 +34,7 @@ export default function Layout({
         <title>{`远川 ${title ? `| ${title}` : ''}`}</title>
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="referrer" content="no-referrer" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <script type="application/javascript" src="/baidu.js" />
       </Head>
       <ResponsiveContext.Consumer>
@@ -115,12 +116,8 @@ export default function Layout({
           const isMobile = size === 'small'
           return (
             <Main pad={{ top: isMobile ? '44px' : '80px' }}>
-              <ResponsiveContext.Consumer>
-                {(size) => {
-                  const isMobile = size === 'small'
-                  return <Box>{children}</Box>
-                }}
-              </ResponsiveContext.Consumer>
+              <Box>{children}</Box>
+              {!isMobile && <FixedContact />}
             </Main>
           )
         }}

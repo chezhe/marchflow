@@ -55,3 +55,57 @@ a {
   background-image: url('/bg.png');
   background-repeat: repeat;
 }
+
+#newBridge ins {
+  display: none !important;
+}
+
+.fixed-contact {
+  right: -146px;
+  cursor: pointer;
+}
+
+.fixed-contact .consult-qrcode {
+  display: none;
+  margin-top: 10px;
+}
+
+.fixed-contact:hover {
+  /* animation: 0.7s slidein both; */
+  transform: translateX(-146px);
+  transition-duration: 0.7s;
+  transform-style: flat;
+}
+
+.fixed-contact:hover .consult-qrcode {
+  display: block;
+}
+
+@keyframes slidein {
+  from {
+    right: -146px;
+  }
+
+  to {
+    right: 0;
+  }
+}
+/* 
+@keyframes slidein {
+  from {
+    right: -134px;
+  }
+
+  to {
+    right: 0;
+  }
+} */
+
+/* 
+#nb_icon_wrap {
+  display: none;
+}
+
+#nbwlStatusBar {
+  display: none;
+} */
