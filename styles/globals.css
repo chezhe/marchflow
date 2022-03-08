@@ -56,7 +56,11 @@ a {
   background-repeat: repeat;
 }
 
-#newBridge ins {
+#nb_icon_wrap ins {
+  display: none !important;
+}
+
+#nb_nodeboard ins {
   display: none !important;
 }
 
