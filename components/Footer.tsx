@@ -201,6 +201,8 @@ const Desktop = () => {
                           background="white"
                           direction="column"
                           pad="small"
+                          align="center"
+                          justify="center"
                           round="xsmall"
                         >
                           <Image src={item.hover} alt="" />

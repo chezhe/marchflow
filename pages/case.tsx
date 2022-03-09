@@ -36,7 +36,7 @@ export default function Case() {
                   gap="medium"
                   style={{ overflowX: isMobile ? 'scroll' : 'auto' }}
                 >
-                  {CASE.categories.map((item, idx) => {
+                  {['ALL'].map((item, idx) => {
                     const isActive = active === item
                     return (
                       <Text

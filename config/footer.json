@@ -4,19 +4,19 @@
       "title": "Wechat",
       "image": "/footer/wechat.svg",
       "hover": "/footer/wechat-hover.svg",
-      "hover_text": "微信 18768199698"
+      "hover_text": "微信：marchflow01"
     },
     {
       "title": "Tiktok",
       "image": "/footer/tiktok.svg",
-      "hover": "/footer/wechat-hover.svg",
-      "hover_text": "微信 18768199698"
+      "hover": "/footer/tiktok-hover.svg",
+      "hover_text": ""
     },
     {
       "title": "QQ",
       "image": "/footer/qq.svg",
-      "hover": "/footer/wechat-hover.svg",
-      "hover_text": "微信 18768199698"
+      "hover": "/footer/qq-hover.svg",
+      "hover_text": "QQ：565401796"
     }
   ],
   "consult": {
