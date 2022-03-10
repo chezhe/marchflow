@@ -97,11 +97,13 @@ const Mobile = () => {
             icon={<Image src="/message.svg" alt="" />}
             primary
             color="rgba(122, 151, 254, 1)"
+            label="在线咨询"
             style={{
               borderRadius: 0,
               flex: 1,
               textAlign: 'center',
               padding: '15px 0',
+              color: 'white',
             }}
             onClick={() => {
               document.getElementById('nb_icon_wrap')?.click()
@@ -112,11 +114,13 @@ const Mobile = () => {
             primary
             color="rgba(122, 254, 246, 1)"
             href="tel:18768199698"
+            label="电话咨询"
             style={{
               borderRadius: 0,
               flex: 1,
               textAlign: 'center',
               padding: '15px 0',
+              color: 'white',
             }}
           />
         </Box>
@@ -205,7 +209,7 @@ const Desktop = () => {
                           justify="center"
                           round="xsmall"
                         >
-                          <Image src={item.hover} alt="" />
+                          <Image src={item.hover} width="120px" alt="" />
                           <Text size="small">{item.hover_text}</Text>
                         </Box>
                       </Box>

@@ -219,14 +219,16 @@ export default function Home() {
 
                 <Box direction="row" wrap={false}>
                   {!isMobile && (
-                    <Image
-                      src={`/case/${active}.jpg`}
-                      width="50%"
-                      style={{ objectFit: 'contain' }}
-                      alt=""
-                    />
+                    <Box width="50%">
+                      <Image
+                        src={`/case/${active}.jpg`}
+                        width="100%"
+                        style={{ objectFit: 'contain' }}
+                        alt=""
+                      />
+                    </Box>
                   )}
-                  <Box direction="row" wrap>
+                  <Box direction="row" width="50%" wrap>
                     {_.chunk(CASE.items.slice(0, 9), isMobile ? 1 : 3).map(
                       (items, idx) => {
                         return (

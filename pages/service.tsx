@@ -5,6 +5,8 @@ import { Box, Button, Heading, Image, ResponsiveContext, Text } from 'grommet'
 import _ from 'lodash'
 
 export default function Service() {
+  console.log(SERVICE.items)
+  console.log(_.chunk(SERVICE.items, 3))
   return (
     <Layout title={SERVICE.title} activeNav={SERVICE.title}>
       <ResponsiveContext.Consumer>
@@ -15,24 +17,28 @@ export default function Service() {
               <Hat title={SERVICE.subtitle} url="/service/bg.jpg" />
 
               <Box
-                direction="row"
+                direction="column"
                 justify="center"
                 align="center"
-                wrap
-                gap="small"
                 style={{ position: 'relative', top: isMobile ? -10 : -100 }}
                 pad={{ top: '30px' }}
               >
                 {_.chunk(SERVICE.items, isMobile ? 1 : 3).map(
                   (items, index) => {
                     return (
-                      <Box key={index} align="center">
+                      <Box
+                        key={index}
+                        direction="row"
+                        align="center"
+                        justify={isMobile ? 'center' : 'start'}
+                        gap="small"
+                      >
                         {items.map((item, idx) => {
                           return (
                             <Box
                               key={item.title}
                               width={isMobile ? '94%' : '400px'}
-                              height={isMobile ? '' : '600px'}
+                              height={isMobile ? '' : '520px'}
                               align="center"
                               justify="between"
                               pad={{ vertical: 'large' }}
@@ -45,26 +51,17 @@ export default function Service() {
                                   style={{ marginBottom: 30 }}
                                 />
                                 <Text size="large">{item.title}</Text>
-                                <Text color="#999">{item.title_en}</Text>
+                                <Text color="#999">
+                                  {item.title_en.toUpperCase()}
+                                </Text>
                                 <Text
                                   size="xsmall"
-                                  style={{ width: 300, lineHeight: 2 }}
+                                  textAlign="center"
+                                  style={{ width: 320, lineHeight: 2 }}
                                 >
                                   {item.desc}
                                 </Text>
                               </Box>
-
-                              <Button
-                                color="#999"
-                                label="MORE+"
-                                size={isMobile ? 'small' : 'medium'}
-                                style={{
-                                  fontWeight: 400,
-                                  borderWidth: 1,
-                                  padding: '5px 50px',
-                                }}
-                                margin={{ top: isMobile ? '18px' : '0px' }}
-                              />
                             </Box>
                           )
                         })}

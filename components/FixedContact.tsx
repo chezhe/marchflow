@@ -12,7 +12,7 @@ export default function FixedContact() {
   return (
     <Box
       direction="column"
-      style={{ position: 'fixed', top: '30%' }}
+      style={{ position: 'fixed', top: '30%', zIndex: 1000 }}
       gap="2px"
       className="fixed-contact"
     >
