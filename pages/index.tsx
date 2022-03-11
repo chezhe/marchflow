@@ -228,7 +228,7 @@ export default function Home() {
                       />
                     </Box>
                   )}
-                  <Box direction="row" width="50%" wrap>
+                  <Box direction="row" width={isMobile ? '100%' : '50%'} wrap>
                     {_.chunk(CASE.items.slice(0, 9), isMobile ? 1 : 3).map(
                       (items, idx) => {
                         return (
